@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/sunburst.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+    <header>
+        <h1>Workshop 3: Variables, Data Types, and Arithmetic Operators</h1>
+    </header>
+
+    <div class="container">
+        <h1>Workshop 3</h1>
+        <p>Welcome to Workshop 3, where we will dive into the core concepts of variables, data types, and 
+            arithmetic operators in JavaScript. Understanding these fundamentals is crucial as they form the 
+            foundation upon which you'll build more complex programs. By the end of this session, you'll 
+            be comfortable declaring variables, using different data types, and performing basic arithmetic 
+            operations in JavaScript.
+        </p> 
+
+        <div class="browser-section">
+            <h2>What is a Variable?</h2>
+            <p>In JavaScript, a variable is a named storage for data. Think of it as a container that holds 
+                information you want to use later in your code. Variables allow you to store data values 
+                that can be manipulated and retrieved as your program runs. 
+            </p>
+            <p>
+                <span class="highlight">Declaring Variables: </span> In JavaScript, you can declare a variable 
+                 using three keywords: var, let, and const.
+            </p>
+            <p>
+                <ol>
+                    <li><span class="highlight">var: </span> The oldest way to declare a variable. It has function scope, meaning it's accessible 
+                        throughout the function it was declared in, but can be problematic due to its hoisting behavior. For this reason, var is 
+                        no longer used.
+                    </li>
+                    <li>
+                        <span class="highlight">let: </span> Introduced in ES6 (ECMAScript 2015), let is the preferred way to declare variables 
+                        because it has block scope. This means it's only accessible within the block (enclosed by {}) 
+                        where it was declared.
+                    </li>
+                    <li>
+                        <span class="highlight">const: </span> Also introduced in ES6, const is used to declare variables that won't 
+                        be reassigned. The variable itself is constant.
+                    </li>    
+                </ol>
+            </p>
+            <p>
+                Examples:
+                <pre><code class="language-javascript">
+var name = "Bob";         // Using var
+let age = 25;             // Using let
+const isStudent = true;   // Using const                    
+                </code></pre>
+                var is legacy code but it is widely used through tutorials and books and it is important to know what it is.
+            </p>
+
+        <div class="browser-section">
+            <h2>Understanding Data Types</h2>
+            <p>JavaScript is a dynamically typed language, meaning the type of a variable is determined at runtime. This 
+                flexibility allows you to change the type of a variable, but it also means you need to be aware of the 
+                different data types and how they interact.
+            </p>
+        </div>
+            
+        <div class="browser-section">
+            <h2>String</h2>
+            <p>Strings represent text. Strings are enclosed in quote marks (', ", or `). Strings are stored in memory 
+                as a sequence of characters. The maximum size of a string variable depends on the browsers.  In Chrome and 
+                Node, the limit is around 1GB (or 512MB on 32bit systems.) In Firefox, the limit is 2GB, and in Safari, the 
+                limit is 4GB.  For contrast, the complete works of shakespere only takes up 5MB.
+            <pre><code class="language-javascript">
+let greeting = "Hello, World!";
+let greeting = "Time flies like an arrow; Fruit flies like a banana."                  
+            </code></pre>
+            </p>
+        </div>
+
+        <div class="browser-section">
+            <h2>Number</h2>
+            <p>In JavaScript, the number datatype represents numeric values. This includes Integers(whole numbers) and 
+               Real Numbers(Any number with a decimal point). In some text books, you will see Real numbers being split up 
+               into categories of float and double and this relates to the size of memory these data types have. JavaScript 
+               uses 64-bits of memory to store any number. This gives a range of +/- 9.2Quintillion (9 and 18 0s.)
+               For context, That's almost the combined number of heartbeats from every human that ever lived. ever!
+            <pre><code class="language-javascript">
+let count = 42;                 
+let price = 33.99;
+            </code></pre>
+            </p>
+        </div>
+
+        <div class="browser-section">
+            <h2>Boolean</h2>
+            <p>A boolean value only holds one bit of data, and that is either a 1 or a 0. For programming we know this
+                as true or false. Booleans are mainly used for conditional statements. It can also be used as switches.
+            <pre><code class="language-javascript">
+let isActive = true;
+let isStaff = false;
+            </code></pre>
+            </p>
+        </div>
+
+        <div class="browser-section">
+            <h2>Null</h2>
+            <p>The Null datatype represents 'no value' or 'nothing.' It is different to 0 as 0 is a value (an integer).
+               Null is the absense of any positive, negative, and zero value. Null is empty memory.
+            <pre><code class="language-javascript">
+let noNumber = null;
+            </code></pre>
+            </p>
+        </div>
+
+        <div class="browser-section">
+            <h2>Undefined</h2>
+            <p>The undefined data structure is reserved for unknown memory, or memory that has not been used 
+               - it does not even contain empty memory. It is memory that has not been assigned to a value yet.
+            <pre><code class="language-javascript">
+let nothing; 
+            </code></pre>
+            </p>
+        </div>
+        
+        <div class="browser-section">
+            <h2>Others</h2>
+            <p>There are other data structures that we will look at later in the module. Symbol, Object, BigInt, 
+               Arrays are all complex data structures. Feel free to look up these data structures
+            </p>
+        </div>       
+        
+        <div class="browser-section">
+            <h2>Arithmetic Operators</h2>
+            <p>There are other data structures that we will look at later in the module. Symbol, Object, BigInt, 
+               Arrays are all complex data structures. Feel free to look up these data structures
+            </p>
+            <pre><code class="language-javascript">
+let x = 13;
+let y = 4;
+
+let sum = x + y;         // addition
+let difference = x - y;  // subtraction
+let product = x * y;     // multiplication
+let quotient = x / y;    // division
+let exponent = x ** y;   // exponential
+let modulus = x % y;     // remainder
+            </code></pre>
+        </div>
+
+        <div class="browser-section">
+            <h2>Exercises</h2>
+            <p>We've not had a look at two ways to obtain user input, let's put them into practice. Try these exercises. 
+            </p>
+            <ul id="taskList">
+                <li><input type="checkbox" id="task1"><label for="task1"> Task 1: Variable Declaration and Assignment</br>Declare three variables using let to store your name, age, and whether you are a student. Print these variables to the console.</label></li>
+                <li><input type="checkbox" id="task2"><label for="task2"> Task 2: Working with Different Data Types</br>Create a variable to store a list of your favorite colors, and another variable to store your personal details (like name, age, etc.) as an object. Print both variables to the console.</label></li>
+                <li><input type="checkbox" id="task3"><label for="task3"> Task 3: Arithmetic Operations<br>1. Add two numbers<br>2. Subtract one number from another.<br>3. multiply two numbers.<br>4.Divide one number by another<br>5.Find the remainder when one number is divided by another<br>6.Raise one number to the power of another.</label></li>
+                <li><input type="checkbox" id="task4"><label for="task4"> Task 4: Combining Variables and Operators<br>Write a script that calculates the perimeter of a rectangle (given width and height) and the area of a circle (given radius). Use variables to store the dimensions and constants for the calculations.</label></li>
+              </ul>
+        </div>        
+
+
+        <div class="browser-section">
+            <h2>Q&A and Troubleshooting</h2>
+            <ul id="taskList">
+                <li>✅ If variables don't change when you want them, check how they are declared. Consts are immutable</li>
+                <li>✅ NaN means Not a Number : This is when you attempt to do maths using the wrong data type.</li>
+                <li>✅ It is standard practice to put spaces before and after operators to make the code readable. </li>
+            </ul>
+            <p class="highlight">Remember the Whiteboard is available for you to ask questions anonymously.</p>
+        </div>
+
+        <div class="browser-section">
+            <h2>Further Learning</h2>
+            <ul id="taskList">
+                <li>📖 <a href="https://www.w3schools.com/js/js_operators.asp" target="_blank">W3Schools JavaScript operators</li>
+                <li>👀 <a href="https://www.youtube.com/watch?v=kJ0_mJHpGrs" target="_blank">YouTube: Saperis: Arithmetic</a></li>
+                <li>💻 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators" target="_blank">Official Documentation</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; J. Wilson. Dundee and Angus College.</p>
+    </footer>
+    <script src="script.js">
+        alert ("This code is running");
+    </script>
+</body>
+</html>
